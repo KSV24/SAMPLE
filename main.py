@@ -97,3 +97,9 @@ name="vishal is a baller"
 #}
 #print("Vishal Marks:", student_marks["Vishal"])
 
+import numpy as np
+arr = np.array([10, 20, 30, 40])
+print("Array:", arr)
+print("Sum:", np.sum(arr))
+print("Mean:", np.mean(arr))
+print("Multiply by 2:", arr * 2)
