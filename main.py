@@ -97,9 +97,29 @@ name="vishal is a baller"
 #}
 #print("Vishal Marks:", student_marks["Vishal"])
 
+#import numpy as np
+#arr = np.array([10, 20, 30, 40])
+#print("Array:", arr)
+#print("Sum:", np.sum(arr))
+#print("Mean:", np.mean(arr))
+#print("Multiply by 2:", arr * 2)
+
 import numpy as np
-arr = np.array([10, 20, 30, 40])
-print("Array:", arr)
-print("Sum:", np.sum(arr))
-print("Mean:", np.mean(arr))
-print("Multiply by 2:", arr * 2)
+import pandas as pd
+
+def generate_school_data(students=100, seed=42):
+    np.random.seed(seed)
+    
+    data = {
+        "Math": np.random.randint(35, 100, students),
+        "Science": np.random.randint(35, 100, students),
+        "English": np.random.randint(35, 100, students),
+        "Attendance (%)": np.random.randint(60, 100, students),
+        "Study Hours (per week)": np.random.randint(1, 20, students)
+    }
+    df = pd.DataFrame(data)
+    return df
+school_df = generate_school_data(10)
+print("School Dataset:\n")
+print(school_df)
+print("\nShape:", school_df.shape)
